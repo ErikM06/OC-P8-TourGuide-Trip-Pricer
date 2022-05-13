@@ -4,6 +4,7 @@ import com.trippricer.exception.UUIDException;
 import com.trippricer.service.TripPricerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import tripPricer.Provider;
 
@@ -17,7 +18,7 @@ public class TripPricerController {
     TripPricerService tripPricerService;
 
     @GetMapping("/getProvider")
-    public List<Provider> getProviderFromService (String apiKey, String attractionId, int adults, int children,
+    public List<Provider> getProviderFromService (@RequestParam String apiKey, String attractionId, int adults, int children,
                                                   int nightsStay, int rewardsPoints) throws UUIDException {
         UUID attractionIdToUUID = null;
         try {
