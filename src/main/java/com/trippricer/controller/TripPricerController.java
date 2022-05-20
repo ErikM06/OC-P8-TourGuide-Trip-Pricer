@@ -17,6 +17,12 @@ public class TripPricerController {
     @Autowired
     TripPricerService tripPricerService;
 
+    /**
+     *
+     * @return a list of Provider objects
+     * to the port 9010
+     * @throws UUIDException
+     */
     @GetMapping("/getProvider")
     public List<Provider> getProviderFromService (@RequestParam String apiKey, String attractionId, int adults, int children,
                                                   int nightsStay, int rewardsPoints) throws UUIDException {
